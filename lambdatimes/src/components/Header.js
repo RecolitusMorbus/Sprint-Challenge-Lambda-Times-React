@@ -34,7 +34,8 @@ const Date = styled.span`
 `;
 
 const Temp = styled.span`
-  margin-left: 25px;
+  margin-left: 5px;
+  margin-right: 20px;
   flex: 1;
 `;
 
@@ -43,7 +44,7 @@ const Header = () => {
     <HeaderContainer>
       <Date>SMARCH 32, 2018</Date>
       <h1>Lambda Times</h1>
-      <Temp>98°</Temp>
+      <Temp>Your Local Temp 98°F</Temp>
     </HeaderContainer>
   )
 }
