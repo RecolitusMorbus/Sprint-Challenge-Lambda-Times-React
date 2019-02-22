@@ -26,6 +26,7 @@ h1 {
 `;
 
 const Date = styled.span`
+  margin-left: 20px;
   align-self: flex-end;
   font-size: 11px;
   font-weight: bold;
