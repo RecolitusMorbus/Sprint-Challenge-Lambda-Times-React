@@ -1,15 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Card from './Card';
 
-const Cards = props => {
+const CardsContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: none;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  
+  @media (min-width: 1200px) {
+    .cards-container {
+      width: 1200px;
+    }
+`;
+
+const Cards = ({ cards }) => {
   return (
-    <div className="cards-container">
-      {/* Using the cards prop, map over the list creating a 
-          new Card component for each passing the card as the only prop*/}
-    </div>
+    <CardsContainer>
+      {cards.map(card => <Card key={card.headline} card={card} tab={card.tab} />)}
+    </CardsContainer>
   )
 }
 
-// Make sure you include prop types for all of your incoming props
+Cards.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.objects)
+}
 
 export default Cards;
